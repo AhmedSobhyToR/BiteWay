@@ -1,0 +1,16 @@
+.home{
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: black;
+}
+
+.bg{
+    /* background-image: url("/assets/images/home-bg.jpg"); */
+    background-image: radial-gradient(
+        #8b8b8b, #1d252e
+    );
+    /* animation: zoomIn 2s ease-in-out 1 forwards; */
+    height: 100vh;
+}
+

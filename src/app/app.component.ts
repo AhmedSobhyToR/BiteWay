@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { HomeComponent } from "./pages/home/home.component";
+import { Burger3DComponent } from "./components/burger-3-d/burger-3-d.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, HomeComponent, Burger3DComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
