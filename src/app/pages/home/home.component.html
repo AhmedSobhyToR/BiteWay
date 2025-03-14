@@ -1,33 +1,5 @@
 <div class="home">
-    <section class="intro-section">
-        <app-header></app-header>
-        <app-biteway-logo></app-biteway-logo>
-
-        <div class="home-card">
-            <div class="home-card-left">
-                <p>New</p>
-                <h1>TRY THE NEW BURGER</h1>
-                <h1>EXTRA CHEESE</h1>
-                <p>Our burger is a unique combination of aromatic,
-                 juicy minced meat, soft black buns,
-                  smoky cheese, spicy sauces,
-                  and fresh vegetables.</p>
-                    <div class="home-card-buttons">
-                        <input type="button" value="Add To Cart">
-                        <input type="button" value="All Burgers">
-                    </div>
-            </div>
-            <div class="home-card-right">
-                <app-burger-3-d></app-burger-3-d>
-            </div>
-        </div>
-
-        <div class="slider-buttons">
-            <div (click)="prevCard()" ><span><</span></div>
-            <div (click)="nextCard()" ><span>></span></div>
-        </div>
-    </section>
-
+    <app-intro-section></app-intro-section>
     <app-advantages-section></app-advantages-section>
     <app-categories-section></app-categories-section>
 </div>

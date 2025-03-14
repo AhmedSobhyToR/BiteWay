@@ -1,12 +1,19 @@
 <section class="categories-section">
     <p class="section-header">Categories</p>
 
-    <div class="categories">
+    <div class="categories-container" #categoriesContainer>
+        <div class="categories" #categoriesWrapper>
+            @for (cat of categories; track $index) {
+                <app-categories-card [title]="cat.title" [img]="cat.img"></app-categories-card>
+            }
+        </div>
 
-        @for (cat of categories; track $index) {
-            <app-categories-card [title]="cat.title" [img]="cat.img"></app-categories-card>
-        }
-
+        <div class="slide-buttons">
+            <button (click)="prevSlide()"><</button>
+            <button (click)="nextSlide()">></button>
+        </div>
     </div>
+
+
 
 </section>
