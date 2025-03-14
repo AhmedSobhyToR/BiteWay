@@ -27,19 +27,24 @@ export class Burger3DComponent {
     this.scene = new THREE.Scene();
 
     // Camera
-    this.camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    // this.camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+    this.camera = new THREE.PerspectiveCamera(40, 1, 0.1, 1000); // Keep aspect ratio 1:1
     this.camera.position.set(0, 0, 1);
 
     // Renderer
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     this.renderContainer.nativeElement.appendChild(this.renderer.domElement);
+    // this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    // const container = this.renderContainer.nativeElement;
+    // this.renderer.setSize(container.clientWidth, container.clientWidth);
+    // container.appendChild(this.renderer.domElement);
 
     // Lighting
     this.light = new THREE.DirectionalLight(0xffffff, 1);
     this.light.position.set(5, 5, 5);
     this.scene.add(this.light);
-
+    this.onWindowResize()
     // Resize handler
     window.addEventListener('resize', () => this.onWindowResize());
   }
@@ -62,9 +67,17 @@ export class Burger3DComponent {
     this.renderer.render(this.scene, this.camera);
   }
 
+  // private onWindowResize(): void {
+  //   this.camera.aspect = window.innerWidth / window.innerHeight;
+  //   this.camera.updateProjectionMatrix();
+  //   this.renderer.setSize(window.innerWidth, window.innerHeight);
+  // }
+
   private onWindowResize(): void {
-    this.camera.aspect = window.innerWidth / window.innerHeight;
+    const container = this.renderContainer.nativeElement;
+    this.camera.aspect = 1; // Keep square aspect ratio
     this.camera.updateProjectionMatrix();
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+    this.renderer.setSize(container.clientWidth, container.clientWidth);
   }
+  
 }

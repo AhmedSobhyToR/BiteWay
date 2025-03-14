@@ -1,9 +1,9 @@
 
 .home-card{
     background-color: black;
-    width: 85%;
+    /* width: 100%; */
     border-radius: 0.7rem;
-    padding: 2.5rem 4rem;
+    padding: 0rem 4rem;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -74,30 +74,10 @@
     background-color: var(--red);
 }
 
-.slider-buttons{
-    position: absolute;
-    top: 43%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 88%;
-}
-
-.slider-buttons div{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
+.home-card-right{
+    position: relative; /* Instead of absolute */
+    width: 50%; /* Adjust as needed */
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    color: #fff;
-    background-color: #fff5;
-    border: none;
-
-    span{
-        font-size: 1.5rem;
-    }
 }

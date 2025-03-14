@@ -1,6 +1,6 @@
 .categories-section{
     color: white;
-    padding: 2rem 6rem;
+    padding: 2rem 0;
     overflow: hidden;
 }
 .categories-container{
@@ -23,6 +23,7 @@
     transition: transform 0.4s ease-in-out;
     width: 95%;
     margin: auto;
+    padding: 0 2rem;
 }
 
 .slide-buttons{

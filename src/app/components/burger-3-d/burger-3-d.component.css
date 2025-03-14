@@ -1,13 +1,7 @@
-.render-container{
-    width: 500px;
-    height: 500px;
-    z-index: 1000;
-    pointer-events: none;
-    position: absolute;
-    left: 25%;
-    top: 0%;
-    transform: translate(-25%, -25%);
+.render-container {
+    width: 100%; /* Make it responsive */
+    max-width: 500px; /* Optional, limits size */
+    height: auto;
+    aspect-ratio: 1; /* Keeps it square */
+    position: relative; /* Stay inside .home-card-right */
 }
-
-
-
