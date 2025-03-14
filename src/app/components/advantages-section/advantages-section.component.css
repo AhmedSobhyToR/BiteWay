@@ -1,0 +1,12 @@
+.advantages-section{
+    color: white;
+    padding: 2rem 6rem;
+}
+
+.advantages{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}

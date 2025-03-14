@@ -1,12 +1,13 @@
 .render-container{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 500px;
+    height: 500px;
     z-index: 1000;
-    position: absolute;
-    inset: 0;
     pointer-events: none;
+    position: absolute;
+    left: 25%;
+    top: 0%;
+    transform: translate(-25%, -25%);
 }
+
+
 

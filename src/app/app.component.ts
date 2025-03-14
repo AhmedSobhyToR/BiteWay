@@ -6,7 +6,7 @@ import { Burger3DComponent } from "./components/burger-3-d/burger-3-d.component"
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, Burger3DComponent],
+  imports: [ HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

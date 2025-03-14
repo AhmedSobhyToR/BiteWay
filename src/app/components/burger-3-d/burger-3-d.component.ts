@@ -27,12 +27,7 @@ export class Burger3DComponent {
     this.scene = new THREE.Scene();
 
     // Camera
-    this.camera = new THREE.PerspectiveCamera(
-      15, 
-      window.innerWidth / window.innerHeight, 
-      0.1, 
-      1000
-    );
+    this.camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
     this.camera.position.set(0, 0, 1);
 
     // Renderer
@@ -51,19 +46,19 @@ export class Burger3DComponent {
 
   private loadGLBModel(): void {
     const loader = new GLTFLoader();
-    loader.load('assets/3D/burger.glb', (gltf) => {
+    loader.load('assets/3D/burger_piece.glb', (gltf) => {
       this.burger = gltf.scene;
       this.burger.position.set(0, 0, 0);
       this.scene.add(this.burger);
-      console.log(this.burger.animations);
-      console.log('Burger is found');
     }, undefined, (error) => {
       console.error('Error loading GLB model:', error);
     });
   }
-
   private animate(): void {
     requestAnimationFrame(() => this.animate());
+    if(this.burger){
+      this.burger.rotation.y -= 0.005;
+    }
     this.renderer.render(this.scene, this.camera);
   }
 

@@ -1,0 +1,12 @@
+<section class="advantages-section">
+    <p class="section-header">Our Advantages</p>
+
+    <div class="advantages">
+        @for (adv of advantages; track $index) {
+            <app-advantages-card 
+            [title1]="adv.title1"
+            [title2]="adv.title2"
+            [img]="adv.img"></app-advantages-card>
+        }
+    </div>
+</section>

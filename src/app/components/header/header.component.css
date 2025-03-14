@@ -1,6 +1,6 @@
 header{
-    height: 60px;
-    background-image: linear-gradient(to right, rgb(44, 41, 41), rgb(33, 20, 72));
+    height: 80px;
+    /* background-image: linear-gradient(to right, rgb(42, 16, 83), rgb(184, 184, 184)); */
     /* background-color: rgb(89, 47, 47); */
     position: sticky;
     top: 0;
