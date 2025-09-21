@@ -1,0 +1,29 @@
+.product{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid var(--white);
+    border-radius: 0.7rem;
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+
+p{
+    z-index: 2;
+    position: absolute;
+    font-weight: bold;
+    top: 7%;
+    font-size: 1.4rem;
+}
+
+img{
+z-index: 1;
+   width: 90%;
+  position: absolute;
+  transform: scale(1.5);
+}

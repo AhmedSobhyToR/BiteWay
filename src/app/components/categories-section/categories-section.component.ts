@@ -1,5 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { CategoriesCardComponent } from "./categories-card/categories-card.component";
+import { Category } from '../../models/category.model';
+import { CategoriesApiService } from '../../services/categories-api.service';
 
 @Component({
   selector: 'app-categories-section',
@@ -10,7 +12,7 @@ import { CategoriesCardComponent } from "./categories-card/categories-card.compo
 })
 export class CategoriesSectionComponent implements OnInit, AfterViewInit {
 
-  categories!: {title:string, img: string}[];
+  categories!: Category[];
 
   currentIndex: number = 0;
   itemWidth: number = 0;
@@ -20,34 +22,22 @@ export class CategoriesSectionComponent implements OnInit, AfterViewInit {
   @ViewChild('categoriesContainer', { static: false }) categoriesContainer!: ElementRef;
 
 
-  ngOnInit(){
-    this.categories = [
-      {
-        title:"Burgers",
-        img:"assets/images/categories/burger.png"
-      },
-      {
-        title:"Rolls",
-        img:"assets/images/categories/roll.png"
-      },
-      {
-        title:"Hot Dogs",
-        img:"assets/images/categories/hot-dog.png"
-      },
-      {
-        title:"Salads",
-        img:"assets/images/categories/salad.png"
-      },
-      {
-        title:"Desserts",
-        img:"assets/images/categories/desert.png"
-      },
+  constructor(private categoriesSer: CategoriesApiService){}
 
-    ]
+  ngOnInit(){
+
   }
 
   ngAfterViewInit(): void {
-      this.calculateItemsPerView();
+    this.categoriesSer.getCategories().subscribe({
+      next:(data) => {
+        this.categories  = data;
+        setTimeout(() => 
+         this.calculateItemsPerView()
+        , 5);
+      }
+    
+    })
   }
 
   calculateItemsPerView() {
@@ -62,7 +52,7 @@ export class CategoriesSectionComponent implements OnInit, AfterViewInit {
         console.log(containerWidth);
         this.updateSlide();
     }
-}
+  }
 
   
   nextSlide() {
@@ -71,17 +61,17 @@ export class CategoriesSectionComponent implements OnInit, AfterViewInit {
         this.currentIndex++;
         this.updateSlide();
     }
-}
+  }
 
-prevSlide() {
-    if (this.currentIndex > 0) {
-        this.currentIndex--;
-        this.updateSlide();
+  prevSlide() {
+      if (this.currentIndex > 0) {
+          this.currentIndex--;
+          this.updateSlide();
+      }
     }
-}
 
-updateSlide() {
-    const offset = -this.currentIndex * this.itemWidth;
-    this.categoriesWrapper.nativeElement.style.transform = `translateX(${offset}px)`;
-}
+  updateSlide() {
+      const offset = -this.currentIndex * this.itemWidth;
+      this.categoriesWrapper.nativeElement.style.transform = `translateX(${offset}px)`;
+    }
 }

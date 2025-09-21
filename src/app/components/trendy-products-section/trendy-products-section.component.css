@@ -1,0 +1,30 @@
+.trendy-products-section{
+    color: white;
+    padding: 2rem 0;
+    overflow: hidden;
+}
+
+.trendy-products-container{
+    min-width: 300px;
+    position: relative;
+    mask-image: linear-gradient(
+         to right,
+          rgba(0,0,0,1)5%,
+          rgba(0,0,0,1)20%,
+          rgba(0,0,0,1)80%,
+          rgba(0,0,0,1)90%
+         );
+}
+
+.trendy-products{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 3rem;
+    transition: transform 0.4s ease-in-out;
+    width: 95%;
+    margin: auto;
+    padding: 0 2rem;
+    z-index: 999;
+
+}

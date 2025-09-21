@@ -24,6 +24,8 @@
     width: 95%;
     margin: auto;
     padding: 0 2rem;
+    z-index: 999;
+
 }
 
 .slide-buttons{

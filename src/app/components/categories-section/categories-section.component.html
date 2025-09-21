@@ -4,7 +4,7 @@
     <div class="categories-container" #categoriesContainer>
         <div class="categories" #categoriesWrapper>
             @for (cat of categories; track $index) {
-                <app-categories-card [title]="cat.title" [img]="cat.img"></app-categories-card>
+                <app-categories-card [title]="cat.categoryName" [img]="cat.imagePath"></app-categories-card>
             }
         </div>
 
