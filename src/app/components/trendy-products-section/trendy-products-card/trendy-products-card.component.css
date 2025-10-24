@@ -3,6 +3,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
+    flex:0 0 5em;
     align-items: center;
     border: 1px solid var(--white);
     border-radius: 0.7rem;

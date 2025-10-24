@@ -1,30 +1,42 @@
-.trendy-products-section{
-    color: white;
-    padding: 2rem 0;
-    overflow: hidden;
+.trendy-products-section {
+  color: white;
+  padding: 2rem 0;
+  overflow: hidden;
 }
 
-.trendy-products-container{
-    min-width: 300px;
-    position: relative;
-    mask-image: linear-gradient(
-         to right,
-          rgba(0,0,0,1)5%,
-          rgba(0,0,0,1)20%,
-          rgba(0,0,0,1)80%,
-          rgba(0,0,0,1)90%
-         );
+.trendy-products-container {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
+    transparent
+  );
 }
 
-.trendy-products{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 3rem;
-    transition: transform 0.4s ease-in-out;
-    width: 95%;
-    margin: auto;
-    padding: 0 2rem;
-    z-index: 999;
+.trendy-products {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 3rem;
+  animation: moveToLeft 15s linear infinite;
+  width: max-content;
+  /* padding: 0 2rem; */
+  padding-right: 1rem;
 
+ 
+}
+.trendy-products:hover {
+    animation-play-state: paused; 
+}
+
+@keyframes moveToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }

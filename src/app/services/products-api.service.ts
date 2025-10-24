@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { map, Observable } from 'rxjs';
 import { developmentServer } from '../Environment/development';
-import { Product } from '../models/product.model';
+import { Product, ProductBackend } from '../models/product.model';
 import { ProductAdapter } from '../adapters/product-adapter';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class ProductsApiService {
 constructor(private httpClient: HttpClient) { }
 
   getTrendyProducts():Observable<Product[]>{
-    return this.httpClient.get<Product[]>(`${this.backendUrl}${this.apiUrl}/getTrendyProducts`).pipe(
+    return this.httpClient.get<ProductBackend[]>(`${this.backendUrl}${this.apiUrl}/getTrendyProducts`).pipe(
       map((rows)=> rows.map( row=> ProductAdapter.adaptProduct(row)))
     )
   }

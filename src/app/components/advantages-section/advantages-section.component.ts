@@ -13,30 +13,34 @@ export class AdvantagesSectionComponent implements OnInit{
   advantages!: {title1: string, title2: string, img: string}[];
 
   ngOnInit(){
-    this.advantages = [
-      {
-      title1: "Free",
-      title2: "Delivery",
-      img: "fa-solid fa-car"
-      },
-
-      {
-        title1: "Wide",
-        title2: "Selections",
-        img: "fa-solid fa-cart-shopping"
-      },
-
-      {
-        title1: "Quality",
-        title2: "Products",
-        img: "fa-solid fa-star"
-      },
-
-      {
-        title1: "Discounts",
-        title2: "Promotions",
-        img: "fa-solid fa-tag"
-      },
-    ]
+ this.advantages = [
+  {
+    title1: "Free",
+    title2: "Delivery",
+    img: "fa-solid fa-car"
+  },
+  {
+    title1: "Wide",
+    title2: "Selections",
+    img: "fa-solid fa-cart-shopping"
+  },
+  {
+    title1: "Quality",
+    title2: "Products",
+    img: "fa-solid fa-star"
+  },
+  {
+    title1: "Discounts",
+    title2: "Promotions",
+    img: "fa-solid fa-tag"
+  },
+  {
+    title1: "24/7",
+    title2: "Support",
+    img: "fa-solid fa-headset"
   }
+]
+
+  }
+
 }

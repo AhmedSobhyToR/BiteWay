@@ -3,3 +3,9 @@ export interface Category{
     categoryName: string;
     imagePath: string;
 }
+
+export interface CategoryBackend{
+    CategoryId: string;
+    CategoryName: string;
+    ImagePath: string;
+}

@@ -1,8 +1,8 @@
-import { Category } from "../models/category.model";
+import { Category, CategoryBackend } from "../models/category.model";
 
 export class CategoryAdapter{
 
-  static  adaptCategory(categoryBackend: any){
+  static  adaptCategory(categoryBackend: CategoryBackend){
         return{
             categoryId: categoryBackend.CategoryId,
             categoryName: categoryBackend.CategoryName,

@@ -1,15 +1,22 @@
 <section class="trendy-products-section">
-    <p class="section-header">Trendy Products</p>
+  <p class="section-header">Trendy Products</p>
 
-    <div class="trendy-products-container" >
-        <div class="trendy-products">
-            @for (prd of trendyProducts; track $index) {
-                <app-trendy-products-card [title]="prd.productName" [img]="prd.imagePath"></app-trendy-products-card>          
-              }
-        </div>
+  <div class="trendy-products-container">
+    <div class="trendy-products">
+      @for (prd of trendyProducts; track $index) {
+        <app-trendy-products-card
+          [title]="prd.productName"
+          [img]="prd.imagePath"
+        ></app-trendy-products-card>
+      }
 
+      <!-- 👇 Duplicate elements for seamless looping -->
+      @for (prd of trendyProducts; track $index) {
+        <app-trendy-products-card
+          [title]="prd.productName"
+          [img]="prd.imagePath"
+        ></app-trendy-products-card>
+      }
     </div>
-
-
-
+  </div>
 </section>

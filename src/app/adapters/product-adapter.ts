@@ -1,8 +1,8 @@
-import { Product } from "../models/product.model";
+import { Product, ProductBackend } from "../models/product.model";
 
 
 export class ProductAdapter {
- static adaptProduct(productBackend: any): Product {
+ static adaptProduct(productBackend: ProductBackend): Product {
  return {
     productId: productBackend.ProductId,
     productName: productBackend.ProductName,
