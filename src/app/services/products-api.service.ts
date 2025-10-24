@@ -10,7 +10,7 @@ import { deploymentServer } from '../Environment/deployment';
   providedIn: 'root'
 })
 export class ProductsApiService {
-  private server = deploymentServer;
+  private server = developmentServer;
   private backendUrl = this.server.serverURL;
   private apiUrl = this.server.apiLink;
 

@@ -11,7 +11,7 @@ import { deploymentServer } from '../Environment/deployment';
 })
 export class CategoriesApiService {
 
-  private server = deploymentServer;
+  private server = developmentServer;
   private backendUrl = this.server.serverURL;
   private apiUrl = this.server.apiLink;
 
