@@ -4,13 +4,14 @@ import { map, Observable } from 'rxjs';
 import { Category, CategoryBackend } from '../models/category.model';
 import { developmentServer } from '../Environment/development';
 import { CategoryAdapter } from '../adapters/category-adapter';
+import { deploymentServer } from '../Environment/deployment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CategoriesApiService {
 
-  private server = developmentServer;
+  private server = deploymentServer;
   private backendUrl = this.server.serverURL;
   private apiUrl = this.server.apiLink;
 

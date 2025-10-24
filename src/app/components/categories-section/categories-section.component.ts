@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component} from '@angular/core';
 import { CategoriesCardComponent } from "./categories-card/categories-card.component";
 import { Category } from '../../models/category.model';
 import { CategoriesApiService } from '../../services/categories-api.service';
@@ -10,68 +10,20 @@ import { CategoriesApiService } from '../../services/categories-api.service';
   templateUrl: './categories-section.component.html',
   styleUrl: './categories-section.component.css'
 })
-export class CategoriesSectionComponent implements OnInit, AfterViewInit {
+export class CategoriesSectionComponent {
 
   categories!: Category[];
 
-  currentIndex: number = 0;
-  itemWidth: number = 0;
-  itemsPerView: number = 1;
-
-  @ViewChild('categoriesWrapper', { static: false }) categoriesWrapper!: ElementRef;
-  @ViewChild('categoriesContainer', { static: false }) categoriesContainer!: ElementRef;
-
-
   constructor(private categoriesSer: CategoriesApiService){}
 
-  ngOnInit(){
-
-  }
 
   ngAfterViewInit(): void {
     this.categoriesSer.getCategories().subscribe({
       next:(data) => {
         this.categories  = data;
-        setTimeout(() => 
-         this.calculateItemsPerView()
-        , 5);
       }
     
     })
   }
 
-  calculateItemsPerView() {
-    const containerWidth = this.categoriesWrapper.nativeElement.offsetWidth;
-    const firstItem = this.categoriesWrapper.nativeElement.children[0];
-
-    if (firstItem) {
-        this.itemWidth = firstItem.offsetWidth + 48;
-        this.itemsPerView = Math.floor(containerWidth / this.itemWidth);
-        console.log(this.itemWidth);
-        console.log(this.itemsPerView);
-        console.log(containerWidth);
-        this.updateSlide();
-    }
-  }
-
-  
-  nextSlide() {
-    const maxIndex = this.categories.length - this.itemsPerView;
-    if (this.currentIndex < maxIndex) {
-        this.currentIndex++;
-        this.updateSlide();
-    }
-  }
-
-  prevSlide() {
-      if (this.currentIndex > 0) {
-          this.currentIndex--;
-          this.updateSlide();
-      }
-    }
-
-  updateSlide() {
-      const offset = -this.currentIndex * this.itemWidth;
-      this.categoriesWrapper.nativeElement.style.transform = `translateX(${offset}px)`;
-    }
 }

@@ -4,12 +4,13 @@ import { map, Observable } from 'rxjs';
 import { developmentServer } from '../Environment/development';
 import { Product, ProductBackend } from '../models/product.model';
 import { ProductAdapter } from '../adapters/product-adapter';
+import { deploymentServer } from '../Environment/deployment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductsApiService {
-  private server = developmentServer;
+  private server = deploymentServer;
   private backendUrl = this.server.serverURL;
   private apiUrl = this.server.apiLink;
 
